@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "7c154f7a-bc91-4e89-b1a4-29fa0e6928b6",
+		"name": "gym_management_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ram@gmail.com\",\r\n    \"password\":\"ram@11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ramu\",\r\n    \"contact\":\"55343\",\r\n    \"address\":\"pune\",\r\n    \"email\":\"ramu@gmail.com\",\r\n    \"password\":\"ramu@11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users/saveUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"saveUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveAsTrainer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Pankaj\",\r\n    \"contact\":\"55343\",\r\n    \"address\":\"pune\",\r\n    \"email\":\"pankaj@gmail.com\",\r\n    \"password\":\"pankaj@11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/users/saveAsTrainer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"saveAsTrainer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserbyId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/activities",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateActivitybyId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activity_name\":\"cricket\",\r\n    \"description\":\"The objective of the game is to hit a small, lightweight ball back and forth over a net with a stringed racquet, trying to make it land within the boundaries of the opponent's side of the court.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/activities/update/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"activities",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getActivityById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/activities/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"activities",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ExerciseList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/exercises",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exercises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveExercise",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workout_exercise_name\":\"Dumbbell bench press:\",\r\n    \"description\":\"The dumbbell bench press is a chest exercise that requires dumbbells and a bench. Lie on the bench with your feet flat on the ground and hold the dumbbells at shoulder-width apart. \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/exercise/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exercise",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getExerciseById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/exercise/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exercise",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MembershiPlanList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/MembershipPlans",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"MembershipPlans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveMembershiPlan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"planName\":\"membership for 6 months\",\r\n    \"duration\":6,\r\n    \"amount\":18000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/MembershipPlans/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"MembershipPlans",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMembershipById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/MembershipPlans/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"MembershipPlans",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GymMemberList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/gymmembers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gymmembers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveGymMember",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gender\":\"male\",\r\n    \"joinDate\":\"2023-02-21\",\r\n    \"height\":174,\r\n    \"weight\":72.7,\r\n    \"user\":{\r\n        \"user_id\":3\r\n    },\r\n    \"membershipPlan\":{\r\n        \"membershipPlanId\":2\r\n    },\r\n    \"activity\":{\r\n        \"activity_id\":1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/gymmembers/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gymmembers",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PaymentList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MakePayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\":\"payment description for member to get assigned workout plan and diet plan\",\r\n    \"member\":{\r\n        \"memberId\":2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/payments/make_payment",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payments",
+						"make_payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WorkoutList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/workouts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"workouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveWorkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workoutname\":\"Mix for beginer refer set names to excercise\",\r\n    \"set1\":\"Push-ups\",\r\n    \"set2\":\"Dumbbell bench press\",\r\n    \"set3\":\"Push-ups\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/workouts/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"workouts",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DietPlanList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dietplans",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dietplans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveDietPlan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"planname\":\"Bulk Plan\",\r\n    \"breakfast\":\"Scrambled eggs with spinach and tomato\",\r\n    \"lunch\":\"Grilled chicken breast\",\r\n    \"preworkout\":\"Greek yogurt with mixed berries\",\r\n    \"dinner\":\"Baked salmon\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/dietplans/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dietplans",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assignWorkoutPlanToMember",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workoutid\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/gymmembers/2/assignWorkoutPlan",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gymmembers",
+						"2",
+						"assignWorkoutPlan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
