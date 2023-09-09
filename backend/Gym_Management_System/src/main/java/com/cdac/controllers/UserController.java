@@ -65,12 +65,14 @@ public class UserController {
 	
 	@PutMapping("/users/{user_id}")
 	public ResponseEntity<?> updateUser(@PathVariable("user_id") int id, @RequestBody User user){
+		System.out.println();
 		User user1 = userservice.update(user);
 		return ResponseEntity.ok(user1);
 	}
 	
 	@DeleteMapping("/users/{user_id}")
 	public ResponseEntity<?> deleteUser(@PathVariable("user_id") int id, @RequestBody User user){
+		System.out.println("here");
 		userservice.delete(user);
 		String message = "User Got deleted";
 		return ResponseEntity.ok(message);

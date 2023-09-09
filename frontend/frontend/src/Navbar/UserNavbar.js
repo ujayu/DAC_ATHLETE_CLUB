@@ -28,12 +28,12 @@ function UserNavbar() {
                         <li>
                             <Link to='/workouts'>Workouts</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to='/membershipForm'>MemberShipForm</Link>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                             <Link to='/payForMembership'>PayForMembership</Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link to="#"></Link>
                         </li>

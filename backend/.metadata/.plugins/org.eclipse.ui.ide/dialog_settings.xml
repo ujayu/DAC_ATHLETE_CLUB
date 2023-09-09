@@ -6,8 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="D:\JAVA work\FINAL PROJECT\backend"/>
-			<item value="C:\Users\Abhiraj\Desktop\cdac\FINAL PROJECT\backend"/>
+			<item value="D:\my c code\FINAL PROJECT\backend"/>
 		</list>
 	</section>
 </section>

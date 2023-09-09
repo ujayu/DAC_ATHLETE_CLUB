@@ -69,7 +69,7 @@ function PaymentForm() {
     return (
         <div>
             <center>
-                <h1>Payment Form</h1>
+                <h1>Pay-Info Form</h1>
                 <br></br>
 
                 <form onSubmit={handleSubmit}>

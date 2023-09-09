@@ -15,7 +15,7 @@ function TrainerNavbar() {
                             <Link to="/profile">Profile</Link>
                         </li>
                         <li>
-                            <Link to="/members">Members</Link>
+                            <Link to="/trainmembers">Members</Link>
                         </li>
                         <li>
                             <Link to='/activities'>Activities</Link>

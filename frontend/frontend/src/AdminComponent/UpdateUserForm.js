@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../CSS/index.css'
-import { useHistory } from "react-router-dom";
+import '../CSS/index.css';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 function UpdateUserForm(props) {
   const [updatename, setUpdatename] = useState(props.user.name);
@@ -13,37 +14,32 @@ function UpdateUserForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     const updatedUser = {
       name: updatename,
       contact: updatecontact,
       address: updateaddress,
-      role : updaterole
+      role: updaterole,
     };
 
-    const xhr = new XMLHttpRequest();
-    const url = `/http://localhost:8080/users/${props.user.user_id}`;
-    xhr.open("PUT", url);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.onload = () => {
-        if (xhr.status === 200) {
-        const data = JSON.parse(xhr.responseText);
-        alert("User updated")
-        console.log(data);
-        history.push("/users");
-    } else {
-    console.error("Error:", xhr.statusText);
-    }
-};
-
-    xhr.onerror = () => {
-    console.error("Error:", xhr.statusText);
-};
-
-    xhr.send(JSON.stringify(updatedUser));
-  }
-  
+    axios
+      .put(`/http://localhost:8080/users/${props.user.user_id}`, updatedUser, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          alert('User updated');
+          history.push('/users');
+        } else {
+          console.error('Error:', response.statusText);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -61,17 +57,14 @@ function UpdateUserForm(props) {
       </label>
       <label>
         Role:
-        <input type="radio" name="role" value="Admin" onChange={(e) => setUpdaterole(e.target.value)}/> Admin
-        <input type="radio" name="role" value="User" onChange={(e) => setUpdaterole(e.target.value)}/> User
-        <input type="radio" name="role" value="Trainer" onChange={(e) => setUpdaterole(e.target.value)}/> Trainer
+        <input type="radio" name="role" value="Admin" onChange={(e) => setUpdaterole(e.target.value)} /> Admin
+        <input type="radio" name="role" value="User" onChange={(e) => setUpdaterole(e.target.value)} /> User
+        <input type="radio" name="role" value="Trainer" onChange={(e) => setUpdaterole(e.target.value)} /> Trainer
       </label>
 
       <button type="submit">Update User</button>
     </form>
   );
 }
-
-
-
 
 export default UpdateUserForm;

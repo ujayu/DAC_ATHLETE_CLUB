@@ -1,5 +1,6 @@
 import { BrowserRouter,Route,Switch } from "react-router-dom"
-import Members from "../Components/Members"
+// import Members from "../Components/Members"
+import TrainMembers from "../Components/TrainMembers"
 import MemberShip from "../Components/MemberShipForm"
 import MemberShipPlans from "../Components/MembershipPlans"
 import MemberShipPlanForm from "../Components/MembershipPlanForm"
@@ -17,6 +18,7 @@ import AssignWorkoutPlan from "./AssignWorkoutPlan"
 import AssignDietPlan from "./AssignDietPlan"
 
 
+
 function TrainerUI() {
     
     return (
@@ -27,7 +29,8 @@ function TrainerUI() {
                 <Route  path="/assignWorkoutPlan" component={AssignWorkoutPlan}/>
                 <Route  path="/assignDietPlan" component={AssignDietPlan}/>
                 <Route  path="/profile" component={TrainerProfile}/>
-                <Route  path="/members" component={Members}/>
+                {/* <Route  path="/members" component={Members}/> */}
+                <Route  path="/trainmembers" component={TrainMembers}/>
                 <Route path="/membershipform" component={MemberShip}/>
                 <Route path="/membershiPlans" component={MemberShipPlans} />
                 <Route path="/memberShipPlanForm" component={MemberShipPlanForm} />

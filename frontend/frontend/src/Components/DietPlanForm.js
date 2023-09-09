@@ -6,7 +6,7 @@ function DietPlanForm() {
     var [dietPlan,setDietPlan] = useState({
         planname : "",
         breakfast : "",
-        launch : "",
+        lunch : "",
         preworkout : "",
         dinner : ""
     })
@@ -43,7 +43,7 @@ function DietPlanForm() {
       };
     
       const validateForm = () => {
-        const requiredFields = ['planname', 'breakfast','launch','preworkout','dinner'];
+        const requiredFields = ['planname', 'breakfast','lunch','preworkout','dinner'];
         return requiredFields.every(field => dietPlan[field].trim() !== '');
       }
 
@@ -67,8 +67,8 @@ function DietPlanForm() {
                     </div>
 
                     <div className='form-group'>
-                        <label>Launch</label>
-                        <input className="form-control" type="text" name="launch" value={dietPlan.launch} onChange={handleChange} required />
+                        <label>Lunch</label>
+                        <input className="form-control" type="text" name="lunch" value={dietPlan.lunch} onChange={handleChange} required />
                     </div>
                     
                     <div className='form-group'>

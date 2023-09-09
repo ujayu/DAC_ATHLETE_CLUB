@@ -34,7 +34,7 @@ function DietPlans() {
                     <th scope="col">Plan Id</th>
                     <th scope="col">Plan Name</th>
                     <th scope="col">Breakfast</th>
-                    <th scope="col">Launch</th>
+                    <th scope="col">Lunch</th>
                     <th scope="col">PreWorkout</th>
                     <th scope="col">Dinner</th>
                     </tr>

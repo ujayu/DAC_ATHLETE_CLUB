@@ -1,13 +1,13 @@
 import '../CSS/index.css'
 
 import React from "react";
-// import "../node_modules/bootstrap/dist/css/bootstrap.css";
+//  import 'bootstrap/dist/css/bootstrap.css";
 import Fit from "../images/Fit.jpg";
 import Aesthetic from "../images/Aesthetic.jpg";
 import Bulky from "../images/Bulky.jpeg";
 import Land from "../images/Land.jpg";
- //import {Row,Col,Image} from 'react-bootstrap'
-// import Button12 from "../Components/button";
+// import {Row,Col,Image} from 'react-bootstrap'
+
 import { Link } from 'react-router-dom';
 import Myfooter from "./MyFooter";
 
@@ -20,8 +20,7 @@ function Home() {
   };
   
   return (
-    // <> <Button12>Click</Button12></>
-    // <div>
+    <div>
         
       <div style={{ backgroundColor: "#6577B3" }}>
 
@@ -238,8 +237,7 @@ function Home() {
 
       <Myfooter />
     </div>
-   
-    //</div>
+    </div>
     
   );
 }

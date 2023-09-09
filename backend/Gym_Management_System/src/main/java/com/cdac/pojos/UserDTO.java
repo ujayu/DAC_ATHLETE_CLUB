@@ -1,3 +1,4 @@
+
 package com.cdac.pojos;
 
 public class UserDTO {

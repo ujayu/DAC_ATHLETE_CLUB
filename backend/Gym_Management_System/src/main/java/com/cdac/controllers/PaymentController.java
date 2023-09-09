@@ -15,44 +15,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.pojos.GymMember;
 import com.cdac.pojos.Payment;
-import com.cdac.pojos.User;
 import com.cdac.service.GymMemberService;
 import com.cdac.service.PaymentService;
-import com.cdac.service.UserService;
 
 @RestController
 @CrossOrigin
 public class PaymentController {
 
-	@Autowired
-	private PaymentService paymentService;
-	
-	@Autowired
-	private GymMemberService gymMemberService;
-	
-	@Autowired
-	private UserService userService;
-	
-	
-	@GetMapping("/payments")
-	public ResponseEntity<List<Payment>> findAll(){
-		List<Payment> list = paymentService.findAll();
-		return new ResponseEntity<>(list, HttpStatus.OK);
-	}
-	
-	@PostMapping("payments/make_payment")
-	public ResponseEntity<Payment> make_payment(@RequestBody Payment payment){
-		int memberId = payment.getMember().getMemberId();
-		GymMember gm = gymMemberService.findById(memberId);
-		gm.setPayment_status(true);
-		payment.setMember(gm);
-		Payment pmt = paymentService.makePayment(payment);
-		return ResponseEntity.ok(pmt);
-	}
-	
-	@DeleteMapping("paymets/delete/{delete_id}")
-	public void delete(@PathVariable("delte_id") int id) {
-		paymentService.deleteById(id);
-	}
-	
+    @Autowired
+    private PaymentService paymentService;
+
+    @Autowired
+    private GymMemberService gymMemberService;
+
+    @GetMapping("/payments")
+    public ResponseEntity<List<Payment>> findAll() {
+        List<Payment> list = paymentService.findAll();
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @PostMapping("/payments/make_payment") // Fix URL mapping by adding a "/"
+    public ResponseEntity<Payment> make_payment(@RequestBody Payment payment) {
+        int memberId = payment.getMember().getMemberId();
+        GymMember gm = gymMemberService.findById(memberId);
+        gm.setPayment_status(true);
+        payment.setMember(gm);
+        Payment pmt = paymentService.makePayment(payment);
+        return ResponseEntity.ok(pmt);
+    }
+
+    @DeleteMapping("/payments/delete/{delete_id}") // Fix URL mapping by adding a "/"
+    public ResponseEntity<Void> delete(@PathVariable("delete_id") int id) { // Change return type to ResponseEntity<Void>
+        paymentService.deleteById(id);
+        return ResponseEntity.noContent().build(); // Return a ResponseEntity with no content
+    }
 }

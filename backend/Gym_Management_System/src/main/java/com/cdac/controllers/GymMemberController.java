@@ -78,6 +78,7 @@ public class GymMemberController {
 					list1.add(gymMember);
 				}
 			}
+			System.out.println(list1);
 			return new ResponseEntity<>(list1, HttpStatus.OK);
 		}
 		
@@ -122,11 +123,16 @@ public class GymMemberController {
 
 		   @PostMapping("/gymmembers/assignDietPlan")
 		   public ResponseEntity<GymMember> assignDietPlan (@RequestBody GymMember member){
+			   System.out.println(member);
 			   int dietplanId = member.getDietPlan().getplanId();
+			   System.out.println(dietplanId);
 			   DietPlan optionalDietplan = dietPlanService.findById(dietplanId);
+			  System.out.println(optionalDietplan);
 			   GymMember gm = gymMemberService.findById(member.getMemberId());
+			   System.out.println(gm);
 			   gm.setDietPlan(optionalDietplan);
 			   GymMember gm1 = gymMemberService.save(gm);
+			   System.out.println(gm1);
 			   return ResponseEntity.ok(gm1);
 			   
 		   }
